@@ -1,0 +1,92 @@
+div {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.spoken {
+    visibility: hidden;
+}
+
+#vidz {
+    background-image: url("http://s5.postimg.org/55gkdepmb/philips.png");
+    width: 150px;
+    height: 90px;
+    z-index: -2;
+}
+
+#timez {
+    position: fixed;
+    left: 180px;
+    top: 90px;
+    width: 300px;
+    height: 10px;
+    z-index: -2;
+    color: white;
+}
+
+#eventinf {
+    position: fixed;
+    border-style: solid;
+    border-color: black;
+    left: 180px;
+    top: 110px;
+    width: 280px;
+    height: 70px;
+    z-index: -2;
+    background-color: #FFEB00;
+}
+
+#bkg {
+    position: fixed;
+    top: 80px;
+    padding: 10px;
+    background-color: #408AD2;
+    width: 450px;
+    height: 275px;
+    z-index: -1;
+}
+
+#data {
+    position: relative;
+    top: 10px;
+}
+
+.slist {
+    position: fixed;
+    left: 45px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #0C5AA6;
+    width: 70px;
+}
+
+.lcn {
+    position: fixed;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #0C5AA6;
+    width: 20px;
+}
+
+.onNow {
+    aria-role: "textarea";
+    left: 120px;
+    position: fixed;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #0C5AA6;
+    width: 170px;
+}
+
+.onNext {
+    left: 295px;
+    position: fixed;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #0C5AA6;
+    width: 170px;
+}

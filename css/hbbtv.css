@@ -1,0 +1,47 @@
+article,
+div {
+    position: relative;
+}
+
+section {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #333;
+    color: #fff;
+    width: 100%;
+    min-height: 400px;
+}
+
+section:target,
+section:first-of-type {
+    z-index: 2;
+}
+
+.h-perceivable {
+    color: red;
+}
+
+.h-understandable {
+    color: green;
+}
+
+.h-operable {
+    color: yellow;
+}
+
+.h-robust {
+    color: cyan;
+}
+
+.p-app {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 5px;
+    font-size: 60px;
+    text-align: center;
+    border: 1px solid blue;
+}
