@@ -29,13 +29,21 @@ Note for fedora I also update VLC as the version i'd previously installed had pr
 vlc (Optional):-
 
 $>git clone git://git.videolan.org/vlc.git
+
 $>cd vlc && ./bootstrap
+
 $>sudo dnf install deepin-gettext-tools //identfied as missing my the bootstrap script
+
 $>sudo dnf install flex //identified as missing my the bootstrap script
+
 $>sudo dnf install lua //identified as missing my the bootstrap script
+
 $>sudo dnf install lua-devel //identified as missing my the bootstrap script
+
 $>./configure;
+
 $>sudo make install;
+
 $>vlc --adaptive-use-access  ./manifest.mpd //to run
 
 Creation:-
@@ -43,14 +51,18 @@ I Downloaded MP4 content from http://www.caminandes.com/ (Blender), other format
 
 
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 640x360 -c:v libx264 -b:v 650k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-low.mp4
+
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 960x540 -c:v libx264 -b:v 1400k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-med.mp4
+
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 1280x720 -c:v libx264 -b:v 2500k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-high.mp4
+
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 1920x1080 -c:v libx264 -b:v 5500k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-max.mp4
 
 This should create streams with frames aligned to support seamless switching. To segment and create the MPD file
 
 
- MP4Box -dash 4000 -rap -bs-switching no -profile live -out manifest.mpd out-low.mp4#audio out-low.mp4#video out-med.mp4#video out-high.mp4#video
+$>MP4Box -dash 4000 -rap -bs-switching no -profile live -out manifest.mpd out-low.mp4#audio out-low.mp4#video out-med.mp4#video out-high.mp4#video
+
 
 created MPD file:-
 
