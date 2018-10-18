@@ -8,10 +8,14 @@ I installed both ffmpeg and MP4box on Fedora 28, but suspect the installation is
 MP4Box:-
 
  $>mkdir gpac;
+ 
  $>git clone https://github.com/gpac/gpac.git;
+ 
  $>cd gpac;
  $>./configure --static-mp4box --use-zlib=no;
+ 
  $>make -j4;
+ 
  $>sudo make install;
 
 Note install anything found missing by configure.
