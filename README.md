@@ -28,7 +28,7 @@ Installation
 I installed both ffmpeg and MP4box on Fedora 28, but suspect the installation is similar on Ubuntu or other Brown brands.
 
 MP4Box:-
-
+```console
  $>mkdir gpac;
  
  $>git clone https://github.com/gpac/gpac.git;
@@ -39,17 +39,21 @@ MP4Box:-
  $>make -j4;
  
  $>sudo make install;
+```
 
 Note install anything found missing by configure.
 
 ffmpeg:-
 
+```console
+$>sudo dnf install ffmpeg;
+```
 
-$>sudo dnf install ffmpeg; // or apt
 Note for fedora I also update VLC as the version i'd previously installed had problems playing DASH.
 
 vlc (Optional):-
 
+```console
 $>git clone git://git.videolan.org/vlc.git
 
 $>cd vlc && ./bootstrap
@@ -67,11 +71,12 @@ $>./configure;
 $>sudo make install;
 
 $>vlc --adaptive-use-access  ./manifest.mpd //to run
+```
 
 Creation:-
 I Downloaded MP4 content from http://www.caminandes.com/ (Blender), other formats can be used, i used the information found at https://www.radiantmediaplayer.com/guides/working-with-ffmpeg.html#ffmpeg-h264 with a slight change to make the available aac lib work.
 
-
+```console
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 640x360 -c:v libx264 -b:v 650k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-low.mp4
 
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 960x540 -c:v libx264 -b:v 1400k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-med.mp4
@@ -79,16 +84,17 @@ $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 960x540 -c:v libx264 -b:v 1400k -r 24 -
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 1280x720 -c:v libx264 -b:v 2500k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-high.mp4
 
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 1920x1080 -c:v libx264 -b:v 5500k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-max.mp4
+```
 
 This should create streams with frames aligned to support seamless switching. To segment and create the MPD file
 
-
+```console
 $>MP4Box -dash 4000 -rap -bs-switching no -profile live -out manifest.mpd out-low.mp4#audio out-low.mp4#video out-med.mp4#video out-high.mp4#video
-
+```
 
 created MPD file:-
 
-
+```xml
 <?xml version="1.0"?>
 <!-- MPD file Generated with GPAC version 0.7.2-DEV-rev625-gc956332c8-master  at 2018-08-01T10:02:14.485Z-->
 <MPD xmlns="urn:mpeg:dash:schema:mpd:2011" minBufferTime="PT1.500S" type="static" mediaPresentationDuration="PT0H2M26.048S" maxSegmentDuration="PT0H0M6.000S" profiles="urn:mpeg:dash:profile:isoff-live:2011">
@@ -115,3 +121,4 @@ created MPD file:-
   </AdaptationSet>
  </Period>
 </MPD>
+```
