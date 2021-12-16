@@ -74,7 +74,7 @@ $>vlc --adaptive-use-access  ./manifest.mpd //to run
 ```
 
 Creation:-
-I Downloaded MP4 content from http://www.caminandes.com/ (Blender), other formats can be used, i used the information found at https://www.radiantmediaplayer.com/guides/working-with-ffmpeg.html#ffmpeg-h264 with a slight change to make the available aac lib work.
+I Downloaded MP4 content from [Blender](http://www.caminandes.com/), other formats can be used, I used the information found at [radioanmediaplayer](https://www.radiantmediaplayer.com/guides/working-with-ffmpeg.html#ffmpeg-h264) with a slight change to make the available aac lib work.
 
 ```console
 $>ffmpeg -i 02_gran_dillama_1080p.mp4 -s 640x360 -c:v libx264 -b:v 650k -r 24 -x264opts keyint=48:min-keyint=48:no-scenecut -profile:v main -preset fast -movflags +faststart -c:a aac -b:a 128k -ac 2 out-low.mp4
