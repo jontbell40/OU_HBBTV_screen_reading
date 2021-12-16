@@ -1,6 +1,6 @@
 ### Update 2021 
 
-Originally I included here the code for my experimental part of my dissertation 
+Originally I included here the code for my experimental part of my dissertation. 
 
 _An Accessibility Evaluation of Screen Readers On the Hybrid Broadcast Broadband Television System_
 
@@ -8,14 +8,14 @@ The primary aim was to investigate how the WCAG specification could be used to a
 
 My conclusion was that using a process like Brajnik's Barrier assessment method, which maps to the WCAG guidelines, the defined barriers could be adjusted to the new environment to assess accessibility transfer.  
 
-The application I used for the experiment was not however without its difficulties. The browser ported to the product tested, had a few issues with regards to the web speech API, and to complete some of the testing by using a web socket connection to an external linux PC, which provided the actual speech.
+The application I used for the experiment was not however, without its difficulties. The browser, ported to the product tested, had a few issues with regards to the web speech API, and to complete some of the testing by using a web socket connection to an external linux PC, which provided the actual speech.
 
 I had done my initial assessment using Firefox, which worked well, but not all browsers are born equal, and the problems I experienced are still present in the other browser used. 
 
-I have also noticed a recent trend in the broadcast field is to use server provided speech for applications, such as HBBTV applications, 
+I have also noticed a recent trend in the broadcast field is to use server provided speech for applications, such as HBBTV applications. 
 
 I will update the code over the next few weeks to support HTML5, and add the final code included in my dissertation.
-I would like to investigate using firefox, or perhaps looking at the C.E.F project what can be achieved these days using the Web Speech API. My idea would be to create a JS library anyone could include on a page to speak based on the existing ARIA tags. This is also itself a interesting problem, as mapping of HTML5, redraws etc will have a large impact on the reader.
+I would like to investigate using firefox, or perhaps looking at the C.E.F project, what can be achieved these days using the Web Speech API. My idea would be to create a JS library anyone could include on a page to speak, based on the existing ARIA tags. This is also itself a interesting problem, as mapping of HTML5, redraws etc will have a large impact on the reader.
 
 
 Notes on some of the tests:-
